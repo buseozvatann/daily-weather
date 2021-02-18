@@ -32,6 +32,7 @@ function App() {
 
     useEffect(() => {
         fetchData().then((content) => {
+            console.log(content);
             setData(content);
         });
     }, [fetchData, setData]);
