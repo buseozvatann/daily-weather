@@ -15,9 +15,9 @@ function App() {
 
     const fetchData = useCallback(async (cityLat = '37.00167', cityLon = '35.32889') => {
         try {
-            const result = await fetch(API_ROOT + '/onecall?lat=' + (cityLat) + '&lon=' + (cityLon) + '&exclude=minutely,hourly,alerts,current&units=metric&lang=tr&appid=' + API_KEY, {});
+            const result = await fetch(API_ROOT + '/onecall?lat=' + (cityLat) + '&lon=' + (cityLon) + '&exclude=minutely,hourly,alerts,current&units=metric&lang=tr&appid=' + API_KEY);
             const json = await result.json();
-            if (json.cod >= 400) {
+            if (json.code >= 400) {
                 return alert('OpenWeatherMap API Günlük Kullanım Hakkiniz Dolmuştur. Yarın Tekrar Deneyiniz...');
             }
             return json;
