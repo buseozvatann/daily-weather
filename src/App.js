@@ -18,7 +18,7 @@ function App() {
             const result = await fetch(API_ROOT + '/onecall?lat=' + (cityLat) + '&lon=' + (cityLon) + '&exclude=minutely,hourly,alerts,current&units=metric&lang=tr&appid=' + API_KEY);
             const json = await result.json();
             if (json.code >= 400) {
-                return alert('OpenWeatherMap API Günlük Kullanım Hakkiniz Dolmuştur. Yarın Tekrar Deneyiniz...');
+                return alert('OpenWeatherMap API Günlük Kullanım Hakkınız Dolmuştur. Yarın Tekrar Deneyiniz...');
             }
             return json;
         } catch (e) {
